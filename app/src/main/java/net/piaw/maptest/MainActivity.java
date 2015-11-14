@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(targetUri));
                 Log.d("main", "Bitmap ready");
                 isBitmapReady = true;
-                targetImage.setImageBitmap(bitmap);
+                targetImage.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 600, 400, false));
                 Log.d("main", "Launching intent");
                 Intent intent = new Intent(this, MapsActivity.class);
                 startActivity(intent);
